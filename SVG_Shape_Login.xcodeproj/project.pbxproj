@@ -11,6 +11,8 @@
 		91175A642793836700C1BB8A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91175A632793836700C1BB8A /* ContentView.swift */; };
 		91175A662793836800C1BB8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91175A652793836800C1BB8A /* Assets.xcassets */; };
 		91175A692793836800C1BB8A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91175A682793836800C1BB8A /* Preview Assets.xcassets */; };
+		91175A712793847800C1BB8A /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = 91175A702793847800C1BB8A /* SwiftUIX */; };
+		91175A74279384C500C1BB8A /* EggShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91175A73279384C500C1BB8A /* EggShape.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,7 @@
 		91175A632793836700C1BB8A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		91175A652793836800C1BB8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		91175A682793836800C1BB8A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		91175A73279384C500C1BB8A /* EggShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggShape.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91175A712793847800C1BB8A /* SwiftUIX in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,6 +57,7 @@
 			children = (
 				91175A612793836700C1BB8A /* SVG_Shape_LoginApp.swift */,
 				91175A632793836700C1BB8A /* ContentView.swift */,
+				91175A72279384A400C1BB8A /* Components */,
 				91175A652793836800C1BB8A /* Assets.xcassets */,
 				91175A672793836800C1BB8A /* Preview Content */,
 			);
@@ -65,6 +70,14 @@
 				91175A682793836800C1BB8A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		91175A72279384A400C1BB8A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				91175A73279384C500C1BB8A /* EggShape.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +96,9 @@
 			dependencies = (
 			);
 			name = SVG_Shape_Login;
+			packageProductDependencies = (
+				91175A702793847800C1BB8A /* SwiftUIX */,
+			);
 			productName = SVG_Shape_Login;
 			productReference = 91175A5E2793836700C1BB8A /* SVG_Shape_Login.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +127,9 @@
 				Base,
 			);
 			mainGroup = 91175A552793836700C1BB8A;
+			packageReferences = (
+				91175A6F2793847800C1BB8A /* XCRemoteSwiftPackageReference "SwiftUIX" */,
+			);
 			productRefGroup = 91175A5F2793836700C1BB8A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91175A642793836700C1BB8A /* ContentView.swift in Sources */,
+				91175A74279384C500C1BB8A /* EggShape.swift in Sources */,
 				91175A622793836700C1BB8A /* SVG_Shape_LoginApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,6 +361,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		91175A6F2793847800C1BB8A /* XCRemoteSwiftPackageReference "SwiftUIX" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftUIX/SwiftUIX.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		91175A702793847800C1BB8A /* SwiftUIX */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 91175A6F2793847800C1BB8A /* XCRemoteSwiftPackageReference "SwiftUIX" */;
+			productName = SwiftUIX;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 91175A562793836700C1BB8A /* Project object */;
 }
