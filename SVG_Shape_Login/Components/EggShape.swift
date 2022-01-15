@@ -7,13 +7,7 @@
 
 import SwiftUI
 
-struct EggShape: View {
-    var body: some View {
-        CustomEggShape()
-    }
-}
-
-struct CustomEggShape: Shape {
+struct EggShape: Shape {
     func path(in rect: CGRect) -> Path {
         var path = Path()
         let width = rect.size.width
@@ -27,11 +21,5 @@ struct CustomEggShape: Shape {
         path.closeSubpath()
         
         return path
-    }
-}
-
-struct EggShape_Previews: PreviewProvider {
-    static var previews: some View {
-        EggShape()
     }
 }
