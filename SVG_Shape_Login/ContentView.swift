@@ -9,6 +9,9 @@ import SwiftUI
 import SwiftUIX
 
 struct ContentView: View {
+    @State var userEmail = ""
+    @State var userPassword = ""
+    
     var body: some View {
         ZStack {
             background
@@ -16,7 +19,57 @@ struct ContentView: View {
             
             EggView()
             
-            Text("Sign up")
+            VStack(spacing: 20) {
+                Text("Sign up")
+                    .font(.largeTitle).bold()
+                    .foregroundColor(Color.white)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                
+                Text("Access to 120+ hours of cat videos, useless memes and livestreams")
+                    .font(.subheadline)
+                    .foregroundColor(Color.white.opacity(0.8))
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                
+                TextField("Email", text: $userEmail)
+                    .foregroundColor(Color.white)
+                    .padding(12)
+                    .background(Color(#colorLiteral(red: 40/255, green: 27/255, blue: 90/255, alpha: 0.8)))
+                    .mask(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                    .overlay(RoundedRectangle(cornerRadius: 16, style: .continuous).stroke(Color.white).blendMode(.overlay))
+                
+                SecureField("Password", text: $userPassword)
+                    .foregroundColor(Color.white)
+                    .padding(12)
+                    .background(Color(#colorLiteral(red: 40/255, green: 27/255, blue: 90/255, alpha: 0.8)))
+                    .mask(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                    .overlay(RoundedRectangle(cornerRadius: 16, style: .continuous).stroke(Color.white).blendMode(.overlay))
+                
+                Text("By clicking on Sign up, you agree to our Terms of Service and Private Policy.")
+                    .font(.subheadline)
+                    .foregroundColor(Color.white.opacity(0.8))
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                
+                Button(action: { }) {
+                    Text("Sign up")
+                }
+                .frame(maxWidth: .infinity)
+                .foregroundColor(Color.white)
+                .padding(12)
+                .background(Color(#colorLiteral(red: 40/255, green: 27/255, blue: 90/255, alpha: 0.8)))
+                .mask(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 16, style: .continuous)
+                        .stroke(Color.white)
+                        .blendMode(.overlay)
+                )
+                
+                    
+            }
+            .padding(20)
+            .background(VisualEffectBlurView(blurStyle: .systemUltraThinMaterialDark))
+            .overlay(RoundedRectangle(cornerRadius: 30, style: .continuous).stroke(Color.white).blendMode(.overlay))
+            .mask(RoundedRectangle(cornerRadius: 30, style: .continuous))
+            .padding()
         }
     }
     
