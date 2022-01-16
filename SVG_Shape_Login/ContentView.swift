@@ -11,6 +11,7 @@ import SwiftUIX
 struct ContentView: View {
     @State var userEmail = ""
     @State var userPassword = ""
+    @State var appear = false
     
     var body: some View {
         ZStack {
@@ -18,6 +19,13 @@ struct ContentView: View {
                 .ignoresSafeArea()
             
             EggView()
+                .offset(x: appear ? 100 : 0)
+                .scaleEffect(appear ? 2: 1)
+                .onAppear {
+                    withAnimation(Animation.linear(duration: 3)) {
+                        appear = true
+                    }
+                }
             
             VStack(spacing: 20) {
                 Text("Sign up")
@@ -62,6 +70,14 @@ struct ContentView: View {
                         .stroke(Color.white)
                         .blendMode(.overlay)
                 )
+                .background(AngularGradient(
+                    gradient: Gradient(stops: [
+            .init(color: Color(#colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.641286161, alpha: 1)), location: 0.07859717309474945),
+            .init(color: Color(#colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)), location: 0.43838635087013245),
+            .init(color: Color(#colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)), location: 0.6134116053581238),
+            .init(color: Color(#colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)), location: 0.8473764657974243)]),
+                    center: UnitPoint(x: 0.4618092920835134, y: 0.511450411134368)
+                ).frame(width: 300, height: 80).blur(radius: 30))
                 
                     
             }
